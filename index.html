@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pastel Pop – Privacy Policy</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --accent: #b990e8;
+      --accent2: #f07ab8;
+      --bg: #faf5ff;
+      --card: #ffffff;
+      --text: #3a2560;
+      --sub: #7a5a9a;
+      --border: #ede0fa;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    /* ── Header ── */
+    header {
+      background: linear-gradient(135deg, #b990e8 0%, #f07ab8 100%);
+      padding: 48px 24px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      width: 300px; height: 300px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+      top: -80px; left: -60px;
+    }
+    header::after {
+      content: '';
+      position: absolute;
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.06);
+      bottom: -60px; right: -40px;
+    }
+    .app-icon {
+      width: 88px; height: 88px;
+      background: rgba(255,255,255,0.22);
+      border-radius: 22px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 48px;
+      margin-bottom: 16px;
+      backdrop-filter: blur(8px);
+      border: 1.5px solid rgba(255,255,255,0.3);
+    }
+    header h1 {
+      color: #fff;
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    header p {
+      color: rgba(255,255,255,0.82);
+      font-size: 14px;
+      margin-top: 6px;
+    }
+
+    /* ── Lang toggle ── */
+    .lang-toggle {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+      position: relative;
+      z-index: 1;
+    }
+    .lang-btn {
+      padding: 7px 22px;
+      border-radius: 20px;
+      border: 1.5px solid rgba(255,255,255,0.5);
+      background: transparent;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+      letter-spacing: 0.5px;
+    }
+    .lang-btn.active {
+      background: #fff;
+      color: var(--accent);
+      border-color: #fff;
+    }
+
+    /* ── Main ── */
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 40px 20px 60px;
+    }
+
+    /* ── Card ── */
+    .card {
+      background: var(--card);
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      padding: 28px 28px 24px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 16px rgba(185,144,232,0.08);
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+    .card-icon {
+      width: 40px; height: 40px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+    .card-icon.purple { background: #f3ebff; }
+    .card-icon.pink   { background: #fff0f8; }
+    .card-icon.blue   { background: #eef4ff; }
+    .card-icon.green  { background: #edfaf4; }
+    .card-icon.orange { background: #fff5ee; }
+
+    .card h2 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    /* ── Table ── */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+    thead th {
+      text-align: left;
+      padding: 8px 12px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--sub);
+      border-bottom: 1px solid var(--border);
+    }
+    tbody tr {
+      border-bottom: 1px solid var(--border);
+    }
+    tbody tr:last-child { border-bottom: none; }
+    tbody td {
+      padding: 12px 12px;
+      vertical-align: top;
+      color: var(--text);
+      line-height: 1.5;
+    }
+    tbody td:first-child {
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .tag {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 10px;
+      font-size: 11px;
+      font-weight: 700;
+      margin: 2px 2px 0 0;
+    }
+    .tag-yes  { background: #fff0f8; color: #c0408a; }
+    .tag-no   { background: #edfaf4; color: #248a3d; }
+    .tag-anon { background: #eef4ff; color: #3a68d0; }
+
+    /* ── List ── */
+    ul.plist {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    ul.plist li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--sub);
+    }
+    ul.plist li::before {
+      content: '✦';
+      color: var(--accent);
+      font-size: 10px;
+      margin-top: 4px;
+      flex-shrink: 0;
+    }
+
+    /* ── Contact ── */
+    .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 14px;
+      color: var(--sub);
+    }
+    .contact-row a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 12px;
+      color: var(--sub);
+      opacity: 0.7;
+    }
+
+    /* ── Updated badge ── */
+    .updated {
+      display: inline-block;
+      background: var(--border);
+      color: var(--sub);
+      font-size: 11px;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 10px;
+      margin-bottom: 28px;
+    }
+
+    @media (max-width: 480px) {
+      .card { padding: 20px 16px; }
+      thead th, tbody td { padding: 10px 8px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="app-icon">🎮</div>
+    <h1>Pastel Pop</h1>
+    <p class="en">Privacy Policy</p>
+    <p class="tr" style="display:none">Gizlilik Politikası</p>
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" onclick="setLang('tr')">TR</button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Updated -->
+    <div style="text-align:center">
+      <span class="updated en">Last updated: May 3, 2025</span>
+      <span class="updated tr" style="display:none">Son güncelleme: 3 Mayıs 2025</span>
+    </div>
+
+    <!-- Data Collection Table -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon purple">🔒</div>
+        <h2 class="en">Data We Collect</h2>
+        <h2 class="tr" style="display:none">Topladığımız Veriler</h2>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th class="en">Data</th>
+            <th class="tr" style="display:none">Veri</th>
+            <th class="en">Purpose</th>
+            <th class="tr" style="display:none">Amaç</th>
+            <th class="en">Linked to You</th>
+            <th class="tr" style="display:none">Kimliğe Bağlı</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="en">Device ID</td>
+            <td class="tr" style="display:none">Cihaz ID</td>
+            <td class="en">Personalized ads (AdMob)</td>
+            <td class="tr" style="display:none">Kişiselleştirilmiş reklam (AdMob)</td>
+            <td><span class="tag tag-no en">No</span><span class="tag tag-no tr" style="display:none">Hayır</span></td>
+          </tr>
+          <tr>
+            <td class="en">Usage Data</td>
+            <td class="tr" style="display:none">Kullanım Verisi</td>
+            <td class="en">Analytics (Firebase)</td>
+            <td class="tr" style="display:none">Analitik (Firebase)</td>
+            <td><span class="tag tag-anon en">Anonymous</span><span class="tag tag-anon tr" style="display:none">Anonim</span></td>
+          </tr>
+          <tr>
+            <td class="en">Crash Logs</td>
+            <td class="tr" style="display:none">Çökme Logları</td>
+            <td class="en">Bug fixing (Crashlytics)</td>
+            <td class="tr" style="display:none">Hata düzeltme (Crashlytics)</td>
+            <td><span class="tag tag-anon en">Anonymous</span><span class="tag tag-anon tr" style="display:none">Anonim</span></td>
+          </tr>
+          <tr>
+            <td class="en">Purchase History</td>
+            <td class="tr" style="display:none">Satın Alma</td>
+            <td class="en">Enable "Remove Ads"</td>
+            <td class="tr" style="display:none">"Reklamları Kaldır" özelliği</td>
+            <td><span class="tag tag-yes en">Yes</span><span class="tag tag-yes tr" style="display:none">Evet</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Third Party -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon pink">🤝</div>
+        <h2 class="en">Third-Party Services</h2>
+        <h2 class="tr" style="display:none">Üçüncü Taraf Hizmetler</h2>
+      </div>
+      <ul class="plist">
+        <li class="en">Google AdMob — serves ads and measures ad performance</li>
+        <li class="tr" style="display:none">Google AdMob — reklam gösterir ve reklam performansını ölçer</li>
+        <li class="en">Google Firebase Analytics — anonymous usage analytics</li>
+        <li class="tr" style="display:none">Google Firebase Analytics — anonim kullanım analitiği</li>
+        <li class="en">Google Firebase Crashlytics — anonymous crash reporting</li>
+        <li class="tr" style="display:none">Google Firebase Crashlytics — anonim çökme raporlama</li>
+        <li class="en">Apple In-App Purchase — processes "Remove Ads" purchase</li>
+        <li class="tr" style="display:none">Apple In-App Purchase — "Reklamları Kaldır" satın alımını işler</li>
+      </ul>
+    </div>
+
+    <!-- Tracking -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon blue">📡</div>
+        <h2 class="en">Tracking &amp; ATT</h2>
+        <h2 class="tr" style="display:none">Takip &amp; ATT</h2>
+      </div>
+      <ul class="plist">
+        <li class="en">Pastel Pop uses Apple's App Tracking Transparency (ATT) framework. A permission prompt is shown before any tracking begins.</li>
+        <li class="tr" style="display:none">Pastel Pop, Apple'ın Uygulama İzleme Şeffaflığı (ATT) çerçevesini kullanır. Herhangi bir takip başlamadan önce izin ekranı gösterilir.</li>
+        <li class="en">If you deny tracking, non-personalized ads are shown instead. No data is shared with third parties for advertising.</li>
+        <li class="tr" style="display:none">Takibi reddederseniz kişiselleştirilmemiş reklamlar gösterilir. Reklam amaçlı üçüncü taraflarla veri paylaşılmaz.</li>
+        <li class="en">You can change your tracking preference anytime in iOS Settings → Privacy → Tracking.</li>
+        <li class="tr" style="display:none">Takip tercihini istediğin zaman Ayarlar → Gizlilik → İzleme'den değiştirebilirsin.</li>
+      </ul>
+    </div>
+
+    <!-- Children -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon green">👶</div>
+        <h2 class="en">Children's Privacy</h2>
+        <h2 class="tr" style="display:none">Çocukların Gizliliği</h2>
+      </div>
+      <ul class="plist">
+        <li class="en">Pastel Pop is rated 4+ and does not knowingly collect personal data from children under 13.</li>
+        <li class="tr" style="display:none">Pastel Pop 4+ olarak derecelendirilmiştir ve 13 yaşın altındaki çocuklardan bilerek kişisel veri toplamaz.</li>
+        <li class="en">No account registration or personal information is required to play.</li>
+        <li class="tr" style="display:none">Oynamak için hesap kaydı veya kişisel bilgi gerekli değildir.</li>
+      </ul>
+    </div>
+
+    <!-- Contact -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon orange">✉️</div>
+        <h2 class="en">Contact</h2>
+        <h2 class="tr" style="display:none">İletişim</h2>
+      </div>
+      <div class="contact-row">
+        <span class="en">Questions? Reach us at</span>
+        <span class="tr" style="display:none">Sorularınız için</span>
+        <a href="mailto:gokalp.gezerr@gmail.com">gokalp.gezerr@gmail.com</a>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <span class="en">© 2025 Gokalp Gezer · Pastel Pop · All rights reserved</span>
+    <span class="tr" style="display:none">© 2025 Gokalp Gezer · Pastel Pop · Tüm hakları saklıdır</span>
+  </footer>
+
+  <script>
+    function setLang(lang) {
+      document.querySelectorAll('.en').forEach(el => {
+        el.style.display = lang === 'en' ? '' : 'none';
+      });
+      document.querySelectorAll('.tr').forEach(el => {
+        el.style.display = lang === 'tr' ? '' : 'none';
+      });
+      document.querySelectorAll('.lang-btn').forEach((btn, i) => {
+        btn.classList.toggle('active', (i === 0 && lang === 'en') || (i === 1 && lang === 'tr'));
+      });
+    }
+  </script>
+
+</body>
+</html>
